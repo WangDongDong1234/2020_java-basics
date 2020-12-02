@@ -22,7 +22,7 @@ public class SequenceB implements Sequence {
         return num;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Sequence sequence=new SequenceB();
         Thread s1=new ClientThread(sequence);
         Thread s2=new ClientThread(sequence);
