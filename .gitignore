@@ -7,3 +7,10 @@
 *.iml
 out
 gen
+
+#忽略所有.svn目录
+.svn/
+#忽略所有target目录
+target/
+#忽略所有.idea目录
+
