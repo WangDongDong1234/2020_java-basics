@@ -12,6 +12,7 @@
 # IntelliJ based IDEs
 .idea
 *.iml
+*.class
 
 # Logs
 logs
