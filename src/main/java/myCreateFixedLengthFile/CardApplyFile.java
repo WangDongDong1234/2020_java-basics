@@ -1054,4 +1054,7 @@ public class CardApplyFile {
 	private String extra;
 
 
+	public static void main(String[] args) {
+		System.out.println(CardApplyFile.class.getDeclaredFields().length);
+	}
 }
