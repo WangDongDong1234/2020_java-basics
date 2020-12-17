@@ -1,4 +1,4 @@
-package myUtils.springbean;
+package myCopyUtils.springbean;
 
 import lombok.Getter;
 import lombok.Setter;

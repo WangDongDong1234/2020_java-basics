@@ -1,4 +1,4 @@
-package myUtils.springbean;
+package myCopyUtils.springbean;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -9,18 +9,18 @@ import java.util.Date;
 /**
  * @author: WangDongDong
  * @version: v1.0
- * @create: 2020-12-15 16:32
+ * @create: 2020-12-15 16:33
  * @description
  **/
-@Getter
 @Setter
+@Getter
 @ToString
-public class SourceDemo {
-	private int id;
+public class TargetDemo {
+	private Integer id;
 
 	private String name;
 
-	private String address;
+	private String email;
 
 	private Date createTime;
 

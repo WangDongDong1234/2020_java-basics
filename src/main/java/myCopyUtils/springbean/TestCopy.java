@@ -1,4 +1,4 @@
-package myUtils.springbean;
+package myCopyUtils.springbean;
 
 import java.util.Date;
 

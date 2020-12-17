@@ -1,4 +1,4 @@
-package myUtils;
+package myCopyUtils;
 
 //import org.apache.commons.beanutils.BeanUtils;
 
