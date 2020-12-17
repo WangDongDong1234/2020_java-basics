@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="myGenerator.CreditMapper">
+  <resultMap id="BaseResultMap" type="myGenerator.Credit">
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="ACCOUNTID" jdbcType="VARCHAR" property="accountid" />
+    <result column="NAME" jdbcType="VARCHAR" property="name" />
+    <result column="AMOUNT" jdbcType="DECIMAL" property="amount" />
+    <result column="DATE" jdbcType="VARCHAR" property="date" />
+    <result column="ADDRESS" jdbcType="VARCHAR" property="address" />
+    <result column="FLAG" jdbcType="VARCHAR" property="flag" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ID, ACCOUNTID, NAME, AMOUNT, DATE, ADDRESS, FLAG
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_credit
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from t_credit
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="myGenerator.Credit">
+    insert into t_credit (ID, ACCOUNTID, NAME, 
+      AMOUNT, DATE, ADDRESS, 
+      FLAG)
+    values (#{id,jdbcType=VARCHAR}, #{accountid,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+      #{amount,jdbcType=DECIMAL}, #{date,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
+      #{flag,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="myGenerator.Credit">
+    insert into t_credit
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="accountid != null">
+        ACCOUNTID,
+      </if>
+      <if test="name != null">
+        NAME,
+      </if>
+      <if test="amount != null">
+        AMOUNT,
+      </if>
+      <if test="date != null">
+        DATE,
+      </if>
+      <if test="address != null">
+        ADDRESS,
+      </if>
+      <if test="flag != null">
+        FLAG,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="accountid != null">
+        #{accountid,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="amount != null">
+        #{amount,jdbcType=DECIMAL},
+      </if>
+      <if test="date != null">
+        #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="flag != null">
+        #{flag,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="myGenerator.Credit">
+    update t_credit
+    <set>
+      <if test="accountid != null">
+        ACCOUNTID = #{accountid,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        NAME = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="amount != null">
+        AMOUNT = #{amount,jdbcType=DECIMAL},
+      </if>
+      <if test="date != null">
+        DATE = #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        ADDRESS = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="flag != null">
+        FLAG = #{flag,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="myGenerator.Credit">
+    update t_credit
+    set ACCOUNTID = #{accountid,jdbcType=VARCHAR},
+      NAME = #{name,jdbcType=VARCHAR},
+      AMOUNT = #{amount,jdbcType=DECIMAL},
+      DATE = #{date,jdbcType=VARCHAR},
+      ADDRESS = #{address,jdbcType=VARCHAR},
+      FLAG = #{flag,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>
