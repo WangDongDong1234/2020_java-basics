@@ -12,9 +12,7 @@ import java.util.Date;
  * @create: 2020-12-15 16:32
  * @description
  **/
-@Getter
-@Setter
-@ToString
+
 public class SourceDemo {
 	private int id;
 
@@ -25,4 +23,55 @@ public class SourceDemo {
 	private Date createTime;
 
 	private Grade grade;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public Date getCreateTime() {
+		return createTime;
+	}
+
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
+	}
+
+	public Grade getGrade() {
+		return grade;
+	}
+
+	public void setGrade(Grade grade) {
+		this.grade = grade;
+	}
+
+	@Override
+	public String toString() {
+		return "SourceDemo{" +
+				"id=" + id +
+				", name='" + name + '\'' +
+				", address='" + address + '\'' +
+				", createTime=" + createTime +
+				", grade=" + grade +
+				'}';
+	}
 }

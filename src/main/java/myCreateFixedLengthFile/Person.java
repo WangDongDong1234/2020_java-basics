@@ -20,8 +20,7 @@ import java.util.List;
  * @create: 2020-12-10 17:23
  * @description
  **/
-@Setter
-@Getter
+
 public class Person {
 	@Column(length = 5,order = 1)
 	Gender gender;
@@ -61,5 +60,13 @@ public class Person {
 	public static Column getColumn(Field field){
 		Column column=field.getAnnotation(Column.class);
 		return column;
+	}
+
+	public Gender getGender() {
+		return gender;
+	}
+
+	public void setGender(Gender gender) {
+		this.gender = gender;
 	}
 }
