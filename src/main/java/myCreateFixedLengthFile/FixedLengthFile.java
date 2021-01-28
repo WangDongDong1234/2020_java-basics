@@ -25,5 +25,6 @@ public class FixedLengthFile {
 		int length=12;
 		System.out.println(String.format("%-"+length+"s","qqq中国")+ "|");
 		System.out.println(String.format("%-12s","qqq中国")+String.format("%-12s", "共和国"));
+		System.out.println(String.format("%-12s","qqq中国")+String.format("%-12s", "共和国")+String.format("%-12s","")+"|");
 	}
 }
