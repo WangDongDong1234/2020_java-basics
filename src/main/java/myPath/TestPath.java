@@ -17,12 +17,12 @@ public class TestPath {
 		 * 1.java文件经过build后的class在target目录中，所以getResource输出的目录是class在的真实目录
 		 */
 		Class<?> c = TestPath.class;
-		//file:/Users/wangdongdong/Documents/ownCode/2020_java-basics/target/classes/myPath/
-		System.out.println(c.getResource(""));
-		///Users/wangdongdong/Documents/ownCode/2020_java-basics/target/classes/
-		System.out.println(c.getResource("/"));
-		///Users/wangdongdong/Documents/ownCode/2020_java-basics/target/classes/myPath/
-		System.out.println(c.getResource("").toURI());
+		//     /Users/wangdongdong/Documents/ownCode/2020_java-basics/target/classes/myPath/
+		System.out.println(c.getResource("").getPath());
+		//     /Users/wangdongdong/Documents/ownCode/2020_java-basics/target/classes/
+		System.out.println(c.getResource("/").getPath());
+		//     /Users/wangdongdong/Documents/ownCode/2020_java-basics/target/classes/myPath/
+		System.out.println(c.getResource("").toURI().getPath());
 
 
 		// 第一种：获取类加载的根路径    /Users/wangdongdong/Documents/ownCode/2020_java-basics/target/classes
@@ -41,10 +41,10 @@ public class TestPath {
 
 		// 第三种：  file:/Users/wangdongdong/Documents/ownCode/2020_java-basics/target/classes/
 		URL xmlpath = c.getClassLoader().getResource("");
-		System.out.println("path4: "+xmlpath);
+		System.out.println("path4: "+xmlpath.getPath());
 
 		// 第四种： /Users/wangdongdong/Documents/ownCode/2020_java-basics
-		System.out.println("path5:" +System.getProperty("user.dir"));
+		System.out.println("path5: "+System.getProperty("user.dir"));
 		/*
 		 * 结果： C:\Documents and Settings\Administrator\workspace\projectName
 		 * 获取当前工程路径
