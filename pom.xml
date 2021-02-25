@@ -71,6 +71,13 @@
             <version>3.16</version>
         </dependency>
 
+        <!-- 使用cglib进行动态代理-->
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>3.2.12</version>
+        </dependency>
+
     </dependencies>
     <build>
         <resources>
