@@ -8,6 +8,9 @@ package myEnum;
  **/
 public class TestColor {
 	public static void main(String[] args) {
-		System.out.println(Color.RED.toString());
+		System.out.println(Color.RED.toString());  //RED
+		System.out.println(String.valueOf(Color.RED));  //RED
+		Color color = Color.valueOf("RED");
+		System.out.println(color);
 	}
 }

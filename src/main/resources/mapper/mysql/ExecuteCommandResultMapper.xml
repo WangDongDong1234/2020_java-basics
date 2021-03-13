@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="myGenerator.ExecuteCommandResultMapper">
+  <resultMap id="BaseResultMap" type="myGenerator.ExecuteCommandResult">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="command_id" jdbcType="INTEGER" property="commandId" />
+    <result column="operate_user" jdbcType="VARCHAR" property="operateUser" />
+    <result column="ack_time" jdbcType="TIMESTAMP" property="ackTime" />
+    <result column="begin_time" jdbcType="TIMESTAMP" property="beginTime" />
+    <result column="complete_time" jdbcType="TIMESTAMP" property="completeTime" />
+    <result column="is_delayed" jdbcType="VARCHAR" property="isDelayed" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, command_id, operate_user, ack_time, begin_time, complete_time, is_delayed, status
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from execute_command_result
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from execute_command_result
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="myGenerator.ExecuteCommandResult">
+    insert into execute_command_result (id, command_id, operate_user, 
+      ack_time, begin_time, complete_time, 
+      is_delayed, status)
+    values (#{id,jdbcType=INTEGER}, #{commandId,jdbcType=INTEGER}, #{operateUser,jdbcType=VARCHAR}, 
+      #{ackTime,jdbcType=TIMESTAMP}, #{beginTime,jdbcType=TIMESTAMP}, #{completeTime,jdbcType=TIMESTAMP}, 
+      #{isDelayed,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="myGenerator.ExecuteCommandResult">
+    insert into execute_command_result
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="commandId != null">
+        command_id,
+      </if>
+      <if test="operateUser != null">
+        operate_user,
+      </if>
+      <if test="ackTime != null">
+        ack_time,
+      </if>
+      <if test="beginTime != null">
+        begin_time,
+      </if>
+      <if test="completeTime != null">
+        complete_time,
+      </if>
+      <if test="isDelayed != null">
+        is_delayed,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="commandId != null">
+        #{commandId,jdbcType=INTEGER},
+      </if>
+      <if test="operateUser != null">
+        #{operateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="ackTime != null">
+        #{ackTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="beginTime != null">
+        #{beginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="completeTime != null">
+        #{completeTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDelayed != null">
+        #{isDelayed,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="myGenerator.ExecuteCommandResult">
+    update execute_command_result
+    <set>
+      <if test="commandId != null">
+        command_id = #{commandId,jdbcType=INTEGER},
+      </if>
+      <if test="operateUser != null">
+        operate_user = #{operateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="ackTime != null">
+        ack_time = #{ackTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="beginTime != null">
+        begin_time = #{beginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="completeTime != null">
+        complete_time = #{completeTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDelayed != null">
+        is_delayed = #{isDelayed,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="myGenerator.ExecuteCommandResult">
+    update execute_command_result
+    set command_id = #{commandId,jdbcType=INTEGER},
+      operate_user = #{operateUser,jdbcType=VARCHAR},
+      ack_time = #{ackTime,jdbcType=TIMESTAMP},
+      begin_time = #{beginTime,jdbcType=TIMESTAMP},
+      complete_time = #{completeTime,jdbcType=TIMESTAMP},
+      is_delayed = #{isDelayed,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

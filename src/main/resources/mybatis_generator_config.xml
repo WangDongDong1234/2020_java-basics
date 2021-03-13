@@ -44,17 +44,17 @@
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
 
-        <table tableName="student"
-               domainObjectName="Student"
-               mapperName="StudentMapper"
-               enableCountByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false">
-            <property name="useActualColumnNames" value="false"/>
-            <columnOverride column="birthday" javaType="java.time.LocalDate"/>
-            <ignoreColumn column="create_time"/>
-            <ignoreColumn column="update_time"/>
-        </table>
+<!--        <table tableName="student"-->
+<!--               domainObjectName="Student"-->
+<!--               mapperName="StudentMapper"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false"-->
+<!--               enableDeleteByExample="false" enableSelectByExample="false"-->
+<!--               selectByExampleQueryId="false">-->
+<!--            <property name="useActualColumnNames" value="false"/>-->
+<!--            <columnOverride column="birthday" javaType="java.time.LocalDate"/>-->
+<!--            <ignoreColumn column="create_time"/>-->
+<!--            <ignoreColumn column="update_time"/>-->
+<!--        </table>-->
 
 <!--        <table schema="db_ccc_batch" tableName="bat_apply_detail"-->
 <!--               domainObjectName="ApplyDetail"-->
@@ -70,6 +70,32 @@
 <!--            <ignoreColumn column="gmt_create"/>-->
 <!--            <ignoreColumn column="gmt_modified"/>-->
 <!--        </table>-->
+
+<!--                <table  tableName="execute_command_result"-->
+<!--                       domainObjectName="ExecuteCommandResult"-->
+<!--                       mapperName="ExecuteCommandResultMapper"-->
+<!--                       enableCountByExample="false" enableUpdateByExample="false"-->
+<!--                       enableDeleteByExample="false" enableSelectByExample="false"-->
+<!--                       selectByExampleQueryId="false">-->
+<!--                    <property name="useActualColumnNames" value="false"/>-->
+<!--                    <ignoreColumn column="ack_time"/>-->
+<!--                    <ignoreColumn column="begin_time"/>-->
+<!--                    <ignoreColumn column="complete_time"/>-->
+<!--                    <ignoreColumn column="id"/>-->
+<!--                </table>-->
+
+
+        <table tableName="execute_command_result"
+               domainObjectName="ExecuteCommandResult"
+               mapperName="ExecuteCommandResultMapper"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="false"/>
+            <columnOverride column="ack_time" javaType="java.time.LocalDateTime"/>
+            <columnOverride column="begin_time" javaType="java.time.LocalDateTime"/>
+            <columnOverride column="complete_time" javaType="java.time.LocalDateTime"/>
+        </table>
 
     </context>
 </generatorConfiguration>
