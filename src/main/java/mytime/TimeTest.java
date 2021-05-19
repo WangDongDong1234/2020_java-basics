@@ -15,17 +15,22 @@ public class TimeTest {
 //		System.out.println(LocalDateTime.now());
 //		//1.localDate 转字符串
 //		localDate2String(LocalDate.now());
-		DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-		LocalDateTime time = LocalDateTime.now();
-		String localTime = df.format(time);
-		LocalDateTime ldt = LocalDateTime.parse("2018-01-12 17:07",df);
-		System.out.println("LocalDateTime转成String类型的时间："+localTime);
-		System.out.println("String类型的时间转成LocalDateTime："+ldt);
+//		DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+//		LocalDateTime time = LocalDateTime.now();
+//		String localTime = df.format(time);
+//		LocalDateTime ldt = LocalDateTime.parse("2018-01-12 17:07",df);
+//		System.out.println("LocalDateTime转成String类型的时间："+localTime);
+//		System.out.println("String类型的时间转成LocalDateTime："+ldt);
+//
+//		DateTimeFormatter fmt = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+//		LocalDateTime l = LocalDateTime.parse("2021-03-12 17:50", fmt);
+//		System.out.println(LocalDateTime.now().isBefore(l));
+//		System.out.println(l);
 
+		LocalDateTime completeTime = LocalDateTime.now();
 		DateTimeFormatter fmt = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-		LocalDateTime l = LocalDateTime.parse("2021-03-12 17:50", fmt);
-		System.out.println(LocalDateTime.now().isBefore(l));
-		System.out.println(l);
+		Boolean isDelay = completeTime.isBefore(LocalDateTime.parse("2022-12-11 12:12",fmt));
+		System.out.println(isDelay);
 
 	}
 
